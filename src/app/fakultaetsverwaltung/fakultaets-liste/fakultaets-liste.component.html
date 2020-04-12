@@ -1,0 +1,24 @@
+<h2>Fakultätsliste</h2>
+<table>
+  <tr>
+    <th>Nr.</th>
+    <th>Name:</th>
+    <th>Kürzel:</th>
+  </tr>
+  <tr *ngFor="let fakultaet of fakultaeten; let i = index" (click)="selektiereFakultaet(fakultaet)">
+    <td class="{{fakultaet == selektierteFakultaet ? 'ausgewaehlt' : ''}}">
+      {{i+1}}
+    </td>
+    <td class="{{fakultaet == selektierteFakultaet ? 'ausgewaehlt' : ''}}">
+      {{fakultaet.name}}
+    </td>
+    <td class="{{fakultaet == selektierteFakultaet ? 'ausgewaehlt' : ''}}">
+      {{fakultaet.kuerzel}}
+    </td>
+    <button routerLink="../edit/{{fakultaet.kuerzel}}">Ändern</button>
+    <button (click)="delete(fakultaet)">Löschen</button>
+  </tr>
+</table>
+<p><button routerLink="../create">Erstellen</button> </p>
+<app-fakultaet-details [fakultaet]="selektierteFakultaet" *ngIf="selektierteFakultaet">
+</app-fakultaet-details>

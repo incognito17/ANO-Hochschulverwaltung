@@ -1,0 +1,10 @@
+<h2>Fakultaet aktualisieren</h2>
+<div>
+  <label for="name">Name</label>
+  <input [(ngModel)]="fakultaet.name" id="name" placeholder="name">
+  <label for="gebaude">Gebäude</label>
+  <input [(ngModel)]="fakultaet.gebaeude" id="gebaude" placeholder="gebaude">
+  <label for="kuerzel">Kürzel</label>
+  <input [(ngModel)]="fakultaet.kuerzel" id="kuerzel" placeholder="kuerzel">
+</div>
+<p><button (click)="update(fakultaet)">Speichern</button></p>
